@@ -46,6 +46,13 @@ const AssetType = {
         name: 'Font',
         runtimeFormat: DataFormat.TTF,
         immutable: true
+    },
+    Asset: {
+        // contentType should be overwritten
+        contentType: 'application/octet-stream',
+        name: 'Asset',
+        runtimeFormat: DataFormat.ANY,
+        immutable: true
     }
 };
 
