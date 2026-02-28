@@ -119,7 +119,7 @@ class ScratchStorage {
      * @returns {Asset} generated Asset with `id` attribute set if not supplied
      */
     createAsset (assetType, dataFormat, data, id, generateId) {
-        if (!dataFormat) throw new Error('Tried to create asset without a dataFormat');
+        if (!dataFormat && assetType.name !== "Asset") throw new Error('Tried to create asset without a dataFormat');
         return new _Asset(assetType, id, dataFormat, data, generateId);
     }
 
