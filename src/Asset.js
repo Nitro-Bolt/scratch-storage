@@ -104,7 +104,7 @@ class Asset {
     }
 
     setData (data, dataFormat, generateId) {
-        if (data && !dataFormat) {
+        if (data && !dataFormat && this.assetType.name !== "Asset") {
             throw new Error('Data provided without specifying its format');
         }
 
