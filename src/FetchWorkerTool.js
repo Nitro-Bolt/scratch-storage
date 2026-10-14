@@ -33,10 +33,10 @@ class PrivateFetchWorkerTool {
 
         try {
             if (this.isGetSupported) {
+                // Keep browser-only import.meta syntax out of files parsed directly by Node and Jest.
                 // eslint-disable-next-line global-require
-                const FetchWorker = require('worker-loader?{"inline":true,"fallback":true}!./FetchWorkerTool.worker');
-
-                const worker = new FetchWorker();
+                const createFetchWorker = require('./create-fetch-worker');
+                const worker = createFetchWorker();
 
                 worker.addEventListener('message', ({data}) => {
                     if (data.support) {

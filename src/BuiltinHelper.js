@@ -10,7 +10,7 @@ const Helper = require('./Helper');
  * @property {AssetType} type - The type of the asset.
  * @property {DataFormat} format - The format of the asset's data.
  * @property {?string} id - The asset's unique ID.
- * @property {Buffer} data - The asset's data.
+ * @property {Uint8Array} data - The asset's data.
  */
 
 /**
@@ -21,25 +21,19 @@ const DefaultAssets = [
         type: AssetType.ImageBitmap,
         format: DataFormat.PNG,
         id: null,
-        data: Buffer.from(
-            require('./builtins/defaultBitmap.png') // eslint-disable-line global-require
-        )
+        data: require('./builtins/defaultBitmap.png') // eslint-disable-line global-require
     },
     {
         type: AssetType.Sound,
         format: DataFormat.WAV,
         id: null,
-        data: Buffer.from(
-            require('./builtins/defaultSound.wav') // eslint-disable-line global-require
-        )
+        data: require('./builtins/defaultSound.wav') // eslint-disable-line global-require
     },
     {
         type: AssetType.ImageVector,
         format: DataFormat.SVG,
         id: null,
-        data: Buffer.from(
-            require('./builtins/defaultVector.svg') // eslint-disable-line global-require
-        )
+        data: require('./builtins/defaultVector.svg') // eslint-disable-line global-require
     }
 ];
 
