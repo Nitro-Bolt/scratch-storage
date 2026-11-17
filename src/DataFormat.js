@@ -6,6 +6,7 @@ const DataFormat = {
     JPG: 'jpg',
     JSON: 'json',
     MP3: 'mp3',
+    OGG: 'ogg',
     PNG: 'png',
     SB2: 'sb2',
     SB3: 'sb3',
