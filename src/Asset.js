@@ -1,4 +1,4 @@
-const md5 = require('js-md5');
+const md5 = require('./md5');
 
 /**
  * The maximum length of a chunk before encoding it into base64.
@@ -104,7 +104,7 @@ class Asset {
     }
 
     setData (data, dataFormat, generateId) {
-        if (data && !dataFormat && this.assetType.name !== "Asset") {
+        if (data && !dataFormat && this.assetType.name !== 'Asset') {
             throw new Error('Data provided without specifying its format');
         }
 
